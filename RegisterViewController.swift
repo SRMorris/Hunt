@@ -27,7 +27,16 @@ class RegisterViewController: UIViewController {
         }
         else
         {
-            
+            User.registerNewUser(usernameTextField.text, password: passwordTextField.text, completed: { (result, error) -> Void in
+                if error != nil
+                {
+                    showAlertWithError(error, forVC: self)
+                }
+                else
+                {
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
+            })
         }
     }
     
