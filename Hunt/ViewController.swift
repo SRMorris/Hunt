@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import BluetoothKit
 import Bolts
 
 class ViewController: UIViewController {
