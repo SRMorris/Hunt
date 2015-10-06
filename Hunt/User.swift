@@ -5,6 +5,7 @@
 //  Created by smorris on 9/29/15.
 //  Copyright © 2015 LateNightGames. All rights reserved.
 
+import MapKit
 import Parse
 import Foundation
 
@@ -40,6 +41,12 @@ class User: PFUser
                 })
             }
         }
+    }
+    
+    //Creates a new user with GPS location and Profile Picture
+    class func registerNewUserWithMoreData(username: String!, password : String!, profilePicture : FILE, gps : mapkit, completed : (result: Bool!, error : NSError!) -> Void)
+    {
+        //Finish this later, k?
     }
     
     ///Logs in a user
