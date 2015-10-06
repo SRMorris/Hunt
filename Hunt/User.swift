@@ -43,12 +43,13 @@ class User: PFUser
         }
     }
     
-    //Creates a new user with GPS location and Profile Picture
+    /*Creates a new user with GPS location and Profile Picture
     class func registerNewUserWithMoreData(username: String!, password : String!, profilePicture : FILE, gps : mapkit, completed : (result: Bool!, error : NSError!) -> Void)
     {
-        //Finish this later, k?
+        Finish this later, k?
     }
-    
+        */
+
     ///Logs in a user
     class func loginUser(username : String!, password : String!, completed:(result : Bool!, error : NSError!) -> Void)
     {

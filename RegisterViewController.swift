@@ -8,10 +8,13 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
+    @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    let imagePicker = UIImagePickerController()
     
     
     override func viewDidLoad() {
@@ -41,6 +44,49 @@ class RegisterViewController: UIViewController {
     }
     
     
+    //Give the option to take a new picture or pick an existing picture for the user's profile picture.
+    @IBAction func onTappedPickProfilePicture(sender: UIButton)
+    {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        
+        let cameraAction = UIAlertAction(title: "Camera", style: .Default)
+            {
+                (action) -> Void in
+                if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+                {
+                    self.imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+                    self.presentViewController(self.imagePicker, animated: true, completion: nil)
+                }
+        }
+        alert.addAction(cameraAction)
+        
+        let libraryAction = UIAlertAction(
+            title: "Library",
+            style: .Default)
+            {
+                (action) -> Void in
+                self.imagePicker.sourceType =  UIImagePickerControllerSourceType.PhotoLibrary
+                self.presentViewController(
+                    self.imagePicker,
+                    animated: true,
+                    completion: nil)
+                
+        }
+        alert.addAction(libraryAction)
+        
+        let cancelAction = UIAlertAction(
+            title: "Cancel",
+            style: .Cancel,
+            handler: nil)
+        alert.addAction(cancelAction)
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
     
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        imagePicker.dismissViewControllerAnimated(true, completion: {
+            let selectedImaege = info[UIImagePickerControllerOriginalImage] as! UIImage
+            self.myImageView.image = selectedImaege
+        })
+    }
     
 }
