@@ -1,6 +1,0 @@
-framework module BluetoothKit {
-  umbrella header "BluetoothKit-umbrella.h"
-
-  export *
-  module * { export * }
-}
