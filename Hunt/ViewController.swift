@@ -12,7 +12,7 @@ import MultipeerConnectivity
 
 class ViewController:UIViewController, MCSessionDelegate {
     
-      let serviceType = "LCOC-Chat"
+    let serviceType = "LCOC-Chat"
     
     var browser : MCBrowserViewController!
     var assistant : MCAdvertiserAssistant!
@@ -21,7 +21,7 @@ class ViewController:UIViewController, MCSessionDelegate {
     
     @IBOutlet weak var chatView: UITextView!
     @IBOutlet weak var messageField: UITextField!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,7 +33,7 @@ class ViewController:UIViewController, MCSessionDelegate {
         self.browser = MCBrowserViewController(serviceType:serviceType,
             session:self.session)
         
-//        self.browser!.delegate = self;
+        //        self.browser!.delegate = self;
         
         self.assistant = MCAdvertiserAssistant(serviceType:serviceType,
             discoveryInfo:nil, session:self.session)
@@ -41,29 +41,22 @@ class ViewController:UIViewController, MCSessionDelegate {
         // tell the assistant to start advertising our fabulous chat
         self.assistant.start()
         
-        }
-
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func sendChat(sender: UIButton) {
+    @IBAction func sendChat(sender: UIButton) throws {
         // Bundle up the text in the message field, and send it off to all
         // connected peers
         
         let msg = self.messageField.text!.dataUsingEncoding(NSUTF8StringEncoding,
             allowLossyConversion: false)
         
-        let error : NSError?
         
-        let nowData = NSKeyedArchiver.archivedDataWithRootObject(msg!)
-        
-        self.session.sendData(nowData, toPeers: self.session.connectedPeers, withMode: MCSessionSendDataMode.Unreliable, error: &error)
-        
-        if error != nil {
-            print("Error sending data: \(error?.localizedDescription)")
-        }
+        try self.session.sendData(msg!, toPeers: self.session.connectedPeers, withMode: MCSessionSendDataMode.Unreliable)
         
         self.updateChat(self.messageField.text!, fromPeer: self.peerID)
         
@@ -151,6 +144,6 @@ class ViewController:UIViewController, MCSessionDelegate {
             
     }
     
-
+    
 }
 
