@@ -12,7 +12,7 @@ import MultipeerConnectivity
 
 class ViewController:UIViewController, MCSessionDelegate {
     
-    let serviceType = "LCOC-Chat"
+    let serviceType = "Hunt"
     
     var browser : MCBrowserViewController!
     var assistant : MCAdvertiserAssistant!
@@ -48,19 +48,44 @@ class ViewController:UIViewController, MCSessionDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func sendChat(sender: UIButton) throws {
+    @IBAction func rock(sender: UIButton) throws {
         // Bundle up the text in the message field, and send it off to all
         // connected peers
         
-        let msg = self.messageField.text!.dataUsingEncoding(NSUTF8StringEncoding,
-            allowLossyConversion: false)
+        var choice = 1
+        let data = NSData(bytes: &choice, length: sizeof(Int))
         
         
-        try self.session.sendData(msg!, toPeers: self.session.connectedPeers, withMode: MCSessionSendDataMode.Unreliable)
+        try self.session.sendData(data, toPeers: self.session.connectedPeers, withMode: MCSessionSendDataMode.Unreliable)
         
         self.updateChat(self.messageField.text!, fromPeer: self.peerID)
         
         self.messageField.text = ""
+    }
+    
+    @IBAction func paper(sender: AnyObject) throws {
+        var choice = 2
+        let data = NSData(bytes: &choice, length: sizeof(Int))
+        
+        
+        try self.session.sendData(data, toPeers: self.session.connectedPeers, withMode: MCSessionSendDataMode.Unreliable)
+        
+        self.updateChat(self.messageField.text!, fromPeer: self.peerID)
+        
+        self.messageField.text = ""
+    }
+    
+    @IBAction func scissors(sender: AnyObject) throws {
+        var choice = 3  
+        let data = NSData(bytes: &choice, length: sizeof(Int))
+        
+        
+        try self.session.sendData(data, toPeers: self.session.connectedPeers, withMode: MCSessionSendDataMode.Unreliable)
+        
+        self.updateChat(self.messageField.text!, fromPeer: self.peerID)
+        
+        self.messageField.text = ""
+        
     }
     
     @IBAction func showBrowser(sender: UIButton) {
@@ -146,4 +171,3 @@ class ViewController:UIViewController, MCSessionDelegate {
     
     
 }
-
