@@ -13,7 +13,8 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
+    @IBOutlet weak var emailTextField: UITextField!
+    var myDreams : Int = 9
     let imagePicker = UIImagePickerController()
     
     

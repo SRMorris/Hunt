@@ -16,7 +16,7 @@ class ProfileViewController: UIViewController {
         
         if PFUser.currentUser() == nil
         {
-            performSegueWithIdentifier("ProfileToRegisterSegue", sender: self)
+            performSegueWithIdentifier("ProfileToLoginSegue", sender: self)
         }
     }
 
