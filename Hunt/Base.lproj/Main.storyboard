@@ -17,22 +17,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hVP-22-irJ">
-                                <rect key="frame" x="105" y="229" width="205" height="30"/>
+                                <rect key="frame" x="105" y="274" width="205" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jLV-HW-GL7">
-                                <rect key="frame" x="105" y="325" width="205" height="30"/>
+                                <rect key="frame" x="105" y="357" width="205" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x1X-bh-QOX">
-                                <rect key="frame" x="179" y="420" width="57" height="30"/>
+                                <rect key="frame" x="179" y="452" width="57" height="30"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
                                     <action selector="registerButtonTapped:" destination="SYn-gc-uzA" eventType="touchUpInside" id="6Mx-sl-zGI"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KdE-Zf-wYO">
+                                <rect key="frame" x="105" y="196" width="205" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -44,6 +49,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="emailTextField" destination="KdE-Zf-wYO" id="Ga6-Rh-hO1"/>
                         <outlet property="passwordTextField" destination="jLV-HW-GL7" id="mIP-hT-7GH"/>
                         <outlet property="usernameTextField" destination="hVP-22-irJ" id="dnr-Og-j1M"/>
                     </connections>
@@ -51,11 +57,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RHt-Op-qK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="tMt-Gh-VzP">
                     <connections>
-                        <action selector="onScreenTapped:" destination="SYn-gc-uzA" id="0ep-u0-vhO"/>
+                        <action selector="onScreenTapped:" destination="SYn-gc-uzA" id="dk4-7e-18i"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="788" y="267"/>
+            <point key="canvasLocation" x="1169" y="229"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="nhL-FJ-fJW">
@@ -79,24 +85,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hunt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MF-m3-yEc">
-                                <rect key="frame" x="188" y="57" width="38" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nhc-Bp-WtP">
                                 <rect key="frame" x="186" y="371" width="42" height="30"/>
                                 <state key="normal" title="Log in"/>
                                 <connections>
                                     <action selector="onLoginButtonTapped:" destination="ZZX-MF-Lcf" eventType="touchUpInside" id="SrY-4W-m08"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="Q9C-yb-nIy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ida-AY-Y7n">
                                 <rect key="frame" x="179" y="450" width="57" height="30"/>
                                 <state key="normal" title="Register"/>
+                                <connections>
+                                    <segue destination="SYn-gc-uzA" kind="show" id="ZIr-8K-vwb"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hunt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MF-m3-yEc">
+                                <rect key="frame" x="188" y="72" width="38" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -109,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fsr-M1-h7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1250" y="267"/>
+            <point key="canvasLocation" x="572" y="229"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="BNL-UQ-sqf">
@@ -122,18 +130,34 @@
                     <view key="view" contentMode="scaleToFill" id="bZj-aU-fbA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGM-uZ-dmO">
+                                <rect key="frame" x="178" y="353" width="58" height="30"/>
+                                <state key="normal" title="Let's roll"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="WgO-Hj-yUc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="If you see this, whoops." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i55-5d-dqG">
+                                <rect key="frame" x="117" y="199" width="180" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="pq0-l4-IBI"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
-                        <segue destination="zLG-n0-1y8" kind="presentation" identifier="ProfileToRegisterSegue" id="oOU-QP-cFb"/>
+                        <outlet property="checkerTexterLabel" destination="i55-5d-dqG" id="VUg-Ua-20r"/>
+                        <segue destination="ZZX-MF-Lcf" kind="presentation" identifier="ProfileToLoginSegue" id="C37-cY-ORK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uU3-PE-hq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="788" y="1072"/>
+            <point key="canvasLocation" x="572" y="-752"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -160,12 +184,8 @@
                                 <rect key="frame" x="192" y="458" width="31" height="30"/>
                                 <state key="normal" title="Ping"/>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MSm-vl-c8T">
-                                <rect key="frame" x="51" y="28" width="312" height="46"/>
-                                <color key="backgroundColor" red="0.015686275437474251" green="0.10588236153125763" blue="0.019607843831181526" alpha="1" colorSpace="deviceRGB"/>
-                            </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Woq-mZ-niN">
-                                <rect key="frame" x="153" y="659" width="97" height="30"/>
+                                <rect key="frame" x="159" y="496" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -190,17 +210,22 @@
                                     <action selector="paper:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JC3-57-DVG"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MSm-vl-c8T">
+                                <rect key="frame" x="51" y="69" width="312" height="46"/>
+                                <color key="backgroundColor" red="0.015686275437474251" green="0.10588236153125763" blue="0.019607843831181526" alpha="1" colorSpace="deviceRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="messageField" destination="Woq-mZ-niN" id="88b-Ce-Xii"/>
+                        <outlet property="profilePicture" destination="FBH-sf-eNP" id="TE2-VL-ddx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1837" y="267"/>
+            <point key="canvasLocation" x="1169" y="-752"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3yM-Xc-hTn">
@@ -218,7 +243,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="64C-Sx-Vd8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="284" y="267"/>
+            <point key="canvasLocation" x="1877" y="161"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qE7-ja-h1K">
@@ -236,7 +261,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lSR-r9-dcp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="160" y="1072"/>
+            <point key="canvasLocation" x="-51" y="-752"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZIr-8K-vwb"/>
+    </inferredMetricsTieBreakers>
 </document>

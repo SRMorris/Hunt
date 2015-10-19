@@ -10,6 +10,7 @@ import UIKit
 
 class RegisterViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
+    
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -21,6 +22,11 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    @IBAction func onScreenTapped(sender: UITapGestureRecognizer)
+    {
+        resignFirstResponder()
     }
     
     @IBAction func registerButtonTapped(sender: UIButton)
