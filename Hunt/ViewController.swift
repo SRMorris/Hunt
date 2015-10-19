@@ -19,11 +19,14 @@ class ViewController:UIViewController, MCSessionDelegate {
     var session : MCSession!
     var peerID: MCPeerID!
     
+    @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var chatView: UITextView!
     @IBOutlet weak var messageField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        profilePicture.image = UIImage(named: "Tommygay")!
         
         self.peerID = MCPeerID(displayName: UIDevice.currentDevice().name)
         self.session = MCSession(peer: peerID)

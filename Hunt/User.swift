@@ -43,12 +43,36 @@ class User: PFUser
         }
     }
     
-    /*Creates a new user with GPS location and Profile Picture
-    class func registerNewUserWithMoreData(username: String!, password : String!, profilePicture : FILE, gps : mapkit, completed : (result: Bool!, error : NSError!) -> Void)
+    /* Creates a new user with GPS location and Profile Picture
+    class func registerNewUserWithMoreData(username: String!, password : String!, profilePicture : FILE, gps : GeoPoint, email : String!, completed : (result: Bool!, error : NSError!) -> Void)
     {
-        Finish this later, k?
+        let newUser = User()
+        newUser.username = username.lowercaseString
+        newUser.password = password.lowercaseString
+        newUser.email = email.lowercaseString
+        
+        
+            newUser.signUpInBackgroundWithBlock { (succeeded, parseError) -> Void in
+                
+                if parseError != nil
+                {
+                    completed(result: false, error: parseError)
+                }
+                else
+                {
+                    Profile.createProfile(newUser, completed: { (profile, succeeded, error) -> Void in
+                        
+                        Profile.queryForCurrentUsersProfile({ (theProfile, error) -> Void in
+                            
+                            UniversalProfile.sharedInstance.profile = theProfile as Profile!
+                            completed(result: true, error: nil)
+                        })
+                    })
+                }
+
+        }
     }
-        */
+    */
 
     ///Logs in a user
     class func loginUser(username : String!, password : String!, completed:(result : Bool!, error : NSError!) -> Void)

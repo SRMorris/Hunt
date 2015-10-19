@@ -11,12 +11,21 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var checkerTexterLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         if PFUser.currentUser() == nil
         {
             performSegueWithIdentifier("ProfileToLoginSegue", sender: self)
+            
+            
+        }
+        else
+        {
+            checkerTexterLabel.text = PFUser.currentUser()?.username
         }
     }
 
