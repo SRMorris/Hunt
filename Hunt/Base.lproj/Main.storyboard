@@ -183,6 +183,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4b-wM-jNs">
                                 <rect key="frame" x="192" y="458" width="31" height="30"/>
                                 <state key="normal" title="Ping"/>
+                                <connections>
+                                    <action selector="showBrowser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FMZ-hp-GdU"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Woq-mZ-niN">
                                 <rect key="frame" x="159" y="496" width="97" height="30"/>

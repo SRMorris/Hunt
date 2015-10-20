@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import MultipeerConnectivity
 
-class ViewController:UIViewController, MCSessionDelegate {
+class ViewController:UIViewController, MCSessionDelegate, MCBrowserViewControllerDelegate {
     
     let serviceType = "Hunt"
     
@@ -36,7 +36,7 @@ class ViewController:UIViewController, MCSessionDelegate {
         self.browser = MCBrowserViewController(serviceType:serviceType,
             session:self.session)
         
-        //        self.browser!.delegate = self;
+         self.browser!.delegate = self;
         
         self.assistant = MCAdvertiserAssistant(serviceType:serviceType,
             discoveryInfo:nil, session:self.session)
@@ -97,7 +97,7 @@ class ViewController:UIViewController, MCSessionDelegate {
     }
     
     func browserViewControllerDidFinish(
-        browserViewController: MCBrowserViewController!)  {
+        browserViewController: MCBrowserViewController)  {
             // Called when the browser view controller is dismissed (ie the Done
             // button was tapped)
             
@@ -105,7 +105,7 @@ class ViewController:UIViewController, MCSessionDelegate {
     }
     
     func browserViewControllerWasCancelled(
-        browserViewController: MCBrowserViewController!)  {
+        browserViewController: MCBrowserViewController)  {
             // Called when the browser view controller is cancelled
             
             self.dismissViewControllerAnimated(true, completion: nil)
