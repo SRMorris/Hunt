@@ -63,7 +63,7 @@ class ViewController:UIViewController, MCSessionDelegate, MCBrowserViewControlle
         
         self.updateChat(self.messageField.text!, fromPeer: self.peerID)
         
-        self.messageField.text = ""
+        self.messageField.text = String(choice)
     }
     
     @IBAction func paper(sender: AnyObject) throws {
@@ -75,7 +75,7 @@ class ViewController:UIViewController, MCSessionDelegate, MCBrowserViewControlle
         
         self.updateChat(self.messageField.text!, fromPeer: self.peerID)
         
-        self.messageField.text = ""
+        self.messageField.text = String(choice)
     }
     
     @IBAction func scissors(sender: AnyObject) throws {
@@ -87,7 +87,7 @@ class ViewController:UIViewController, MCSessionDelegate, MCBrowserViewControlle
         
         self.updateChat(self.messageField.text!, fromPeer: self.peerID)
         
-        self.messageField.text = ""
+        self.messageField.text = String(choice)
         
     }
     

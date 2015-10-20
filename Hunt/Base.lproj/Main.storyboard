@@ -187,11 +187,6 @@
                                     <action selector="showBrowser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FMZ-hp-GdU"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Woq-mZ-niN">
-                                <rect key="frame" x="159" y="496" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwA-Yf-uoa">
                                 <rect key="frame" x="80" y="537" width="30" height="30"/>
                                 <state key="normal" title="rock"/>
@@ -217,6 +212,11 @@
                                 <rect key="frame" x="51" y="69" width="312" height="46"/>
                                 <color key="backgroundColor" red="0.015686275437474251" green="0.10588236153125763" blue="0.019607843831181526" alpha="1" colorSpace="deviceRGB"/>
                             </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="stuff may happpen " borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Woq-mZ-niN">
+                                <rect key="frame" x="136" y="496" width="147" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
