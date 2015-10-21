@@ -18,6 +18,7 @@ class ViewController:UIViewController, MCSessionDelegate, MCBrowserViewControlle
     var assistant : MCAdvertiserAssistant!
     var session : MCSession!
     var peerID: MCPeerID!
+    var choice = 0
     
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var chatView: UITextView!
@@ -151,7 +152,7 @@ class ViewController:UIViewController, MCSessionDelegate, MCBrowserViewControlle
         didStartReceivingResourceWithName resourceName: String,
         fromPeer peerID: MCPeerID, withProgress progress: NSProgress)  {
             
-            // Called when a peer starts sending a file to us
+             updateChat(String(choice), fromPeer: self.peerID)
     }
     
     func session(session: MCSession,
