@@ -128,7 +128,7 @@ class ViewController:UIViewController, MCSessionDelegate, MCBrowserViewControlle
         
         // Add the name to the message and display it
         let message = "\(name): \(text)\n"
-        self.chatView.text = self.chatView.text + message
+        self.messageField.text = self.messageField.text! + message
         
     }
     
