@@ -48,6 +48,11 @@ class Profile: PFObject, PFSubclassing
         }
     }
     
+    class func createProfileWithMoreStuff(user : User!, completed:(profile: Profile!, succeeded: Bool!, error: NSError!) -> Void)
+    {
+        
+    }
+    
     ///Queries for the profile of the current user, and sets the kProfile singleton
     class func queryForCurrentUsersProfile(completed:(profile : Profile!, error : NSError!) -> Void)
     {

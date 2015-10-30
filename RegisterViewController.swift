@@ -51,6 +51,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     
+    
     //Give the option to take a new picture or pick an existing picture for the user's profile picture.
     @IBAction func onTappedPickProfilePicture(sender: UIButton)
     {
