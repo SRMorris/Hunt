@@ -17,11 +17,15 @@ class User: PFUser
     }
     
     ///Creates a new user
-    class func registerNewUser(username : String!, password : String!, completed:(result : Bool!, error : NSError!) -> Void)
+   class func registerNewUser(username : String!, password : String!,email : String!, profilePictureFile : UIImage, gps : MKUserLocation, completed:(result : Bool!, error : NSError!) -> Void)
     {
         let newUser = User()
         newUser.username = username.lowercaseString
         newUser.password = password.lowercaseString
+        newUser.email = email.lowercaseString
+        
+        
+        
         
         newUser.signUpInBackgroundWithBlock { (succeeded, parseError) -> Void in
             
@@ -44,12 +48,14 @@ class User: PFUser
     }
     
     // Creates a new user with GPS location and Profile Picture
-    class func registerNewUserWithMoreData(username: String!, password : String!, profilePictureFile : UIImage, gps : CLLocation, email : String!, completed : (result: Bool!, error : NSError!) -> Void)
+    class func registerNewUserWithMoreData(username: String!, password : String!, profilePictureFile : UIImage!, gps : CLLocation, email : String!, completed : (result: Bool!, error : NSError!) -> Void)
     {
         let newUser = User()
         newUser.username = username.lowercaseString
         newUser.password = password.lowercaseString
         newUser.email = email.lowercaseString
+        
+        
         
         
         
