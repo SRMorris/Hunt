@@ -19,6 +19,7 @@ class ViewController:UIViewController, MCSessionDelegate, MCBrowserViewControlle
     var session : MCSession!
     var peerID: MCPeerID!
     var choice = 0
+    //var loadedUser : User()
     
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var chatView: UITextView!

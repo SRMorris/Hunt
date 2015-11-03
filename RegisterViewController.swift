@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class RegisterViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
@@ -15,8 +16,10 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
+    var userLocation: MKUserLocation
     var myDreams : Int = 9
     let imagePicker = UIImagePickerController()
+    var pickedImage : UIImage
     
     
     override func viewDidLoad() {
@@ -37,7 +40,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
         }
         else
         {
-            User.registerNewUser(usernameTextField.text, password: passwordTextField.text, completed: { (result, error) -> Void in
+            User.registerNewUser(usernameTextField.text, password: passwordTextField.text, email: emailTextField.text, profilePictureFile: pickedImage, gps: userLocation, completed: { (result, error) -> Void in
                 if error != nil
                 {
                     showAlertWithError(error, forVC: self)
@@ -88,12 +91,14 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
             handler: nil)
         alert.addAction(cancelAction)
         self.presentViewController(alert, animated: true, completion: nil)
+        
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         imagePicker.dismissViewControllerAnimated(true, completion: {
             let selectedImaege = info[UIImagePickerControllerOriginalImage] as! UIImage
             self.myImageView.image = selectedImaege
+            self.pickedImage = selectedImaege
         })
     }
     
