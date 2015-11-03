@@ -53,15 +53,14 @@ class ViewController:UIViewController, MCSessionDelegate, MCBrowserViewControlle
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func rock(sender: UIButton) throws {
+    @IBAction func rock(sender: UIButton) throws   {
         // Bundle up the text in the message field, and send it off to all
         // connected peers
         
         var choice = 1
         let data = NSData(bytes: &choice, length: sizeof(Int))
-        
-        
-        try self.session.sendData(data, toPeers: self.session.connectedPeers, withMode: MCSessionSendDataMode.Unreliable)
+
+        try! self.session.sendData(data, toPeers: self.session.connectedPeers, withMode: MCSessionSendDataMode.Unreliable)
         
         self.updateChat(self.messageField.text!, fromPeer: self.peerID)
         
