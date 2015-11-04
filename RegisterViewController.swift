@@ -16,15 +16,19 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
-    var userLocation: MKUserLocation
+    var locationManager: CLLocationManager!
     var myDreams : Int = 9
     let imagePicker = UIImagePickerController()
-    var pickedImage : UIImage
+    var pickedImage : UIImage = UIImage(contentsOfFile: "Tommygay")!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        locationManager = CLLocationManager()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+    
     }
     
     @IBAction func onScreenTapped(sender: UITapGestureRecognizer)
@@ -40,7 +44,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
         }
         else
         {
-            User.registerNewUser(usernameTextField.text, password: passwordTextField.text, email: emailTextField.text, profilePictureFile: pickedImage, gps: userLocation, completed: { (result, error) -> Void in
+            User.registerNewUser(usernameTextField.text, password: passwordTextField.text, email: emailTextField.text, profilePictureFile: pickedImage, gps: locationManager, completed: { (result, error) -> Void in
                 if error != nil
                 {
                     showAlertWithError(error, forVC: self)

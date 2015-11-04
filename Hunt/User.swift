@@ -17,7 +17,7 @@ class User: PFUser
     }
     
     ///Creates a new user
-   class func registerNewUser(username : String!, password : String!,email : String!, profilePictureFile : UIImage, gps : MKUserLocation, completed:(result : Bool!, error : NSError!) -> Void)
+   class func registerNewUser(username : String!, password : String!,email : String!, profilePictureFile : UIImage, gps : CLLocationManager, completed:(result : Bool!, error : NSError!) -> Void)
     {
         let newUser = User()
         newUser.username = username.lowercaseString
