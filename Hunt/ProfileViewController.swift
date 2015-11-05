@@ -25,7 +25,7 @@ class ProfileViewController: UIViewController {
         }
         else
         {
-            checkerTexterLabel.text = PFUser.currentUser()?.username
+            checkerTexterLabel.text = PFUser.currentUser()!.username
         }
     }
 

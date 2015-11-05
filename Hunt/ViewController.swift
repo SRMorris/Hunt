@@ -28,7 +28,7 @@ class ViewController:UIViewController, MCSessionDelegate, MCBrowserViewControlle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        profilePicture.image = UIImage(named: "Tommygay")!
+        profilePicture.image = UIImage(named: "testSloth")!
         
         self.peerID = MCPeerID(displayName: UIDevice.currentDevice().name)
         self.session = MCSession(peer: peerID)

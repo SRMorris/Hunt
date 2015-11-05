@@ -16,10 +16,10 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
-    var userLocation: MKUserLocation
+    var userLocation: MKUserLocation!
     var myDreams : Int = 9
     let imagePicker = UIImagePickerController()
-    var pickedImage : UIImage
+    var pickedImage : UIImage!
     
     
     override func viewDidLoad() {

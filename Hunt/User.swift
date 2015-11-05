@@ -16,13 +16,17 @@ class User: PFUser
         self.registerSubclass()
     }
     
+    
     ///Creates a new user
-   class func registerNewUser(username : String!, password : String!,email : String!, profilePictureFile : UIImage, gps : MKUserLocation, completed:(result : Bool!, error : NSError!) -> Void)
+   class func registerNewUser(username : String!, password : String!,email : String!, profilePictureFile : UIImage!, gps : MKUserLocation!, completed:(result : Bool!, error : NSError!) -> Void)
     {
         let newUser = User()
         newUser.username = username.lowercaseString
         newUser.password = password.lowercaseString
         newUser.email = email.lowercaseString
+        
+        
+        
         
         
         
