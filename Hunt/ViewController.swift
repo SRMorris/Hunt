@@ -61,7 +61,7 @@ class ViewController:UIViewController, MCSessionDelegate, MCBrowserViewControlle
         let data = NSData(bytes: &choice, length: sizeof(Int))
         
         
-        try self.session.sendData(data, toPeers: self.session.connectedPeers, withMode: MCSessionSendDataMode.Unreliable)
+        try! self.session.sendData(data, toPeers: self.session.connectedPeers, withMode: MCSessionSendDataMode.Unreliable)
         
         self.updateChat(self.messageField.text!, fromPeer: self.peerID)
         
@@ -73,7 +73,7 @@ class ViewController:UIViewController, MCSessionDelegate, MCBrowserViewControlle
         let data = NSData(bytes: &choice, length: sizeof(Int))
         
         
-        try self.session.sendData(data, toPeers: self.session.connectedPeers, withMode: MCSessionSendDataMode.Unreliable)
+        try! self.session.sendData(data, toPeers: self.session.connectedPeers, withMode: MCSessionSendDataMode.Unreliable)
         
         self.updateChat(self.messageField.text!, fromPeer: self.peerID)
         
@@ -85,7 +85,7 @@ class ViewController:UIViewController, MCSessionDelegate, MCBrowserViewControlle
         let data = NSData(bytes: &choice, length: sizeof(Int))
         
         
-        try self.session.sendData(data, toPeers: self.session.connectedPeers, withMode: MCSessionSendDataMode.Unreliable)
+        try! self.session.sendData(data, toPeers: self.session.connectedPeers, withMode: MCSessionSendDataMode.Unreliable)
         
         self.updateChat(self.messageField.text!, fromPeer: self.peerID)
         

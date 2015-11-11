@@ -27,10 +27,6 @@ class User: PFUser
         
         
         
-        
-        
-        
-        
         newUser.signUpInBackgroundWithBlock { (succeeded, parseError) -> Void in
             
             if parseError != nil
